@@ -7,15 +7,11 @@ from app.auth.models import User
 
 @at.route('/register', methods=['GET', 'POST'])
 def register_user():
+    name = None
+    email = None
     form = RegistrationForm()
-    if current_user.is_authenticated:
-        flash('you are already registered')
-        return redirect(url_for('main.display_books'))
-    if form.validate_on_submit():
-        User.create_user(
-            user=form.name.data,
-            email=form.email.data,
-            password=form.password.data)
-        flash('Registration Successful')
-        return redirect(url_for('authentication.do_the_login'))
-    return render_template('registration.html', form=form)
+    if request.method == 'POST':
+        name = form.name.data
+        email = form.email.data
+
+    return render_template('registration.html', form=form, email=email)

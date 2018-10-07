@@ -21,5 +21,12 @@
                 {{ form.submit(class='btn btn-primary') }}
             </div>
         </form>
+        <br>
+
+        {% if (name) and (email) %}
+            <p>hello {{ name }}</p>
+            <p>your email with us is {{ email }}</p>
+        {% endif %}
+
     </div>>
 {% endblock %}
