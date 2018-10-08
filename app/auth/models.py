@@ -1,5 +1,5 @@
 from datetime import datetime
-from app import db, bcrypt  # app/__inti__.py
+from app import db, bcrypt
 from flask_login import UserMixin
 from app import login_manager
 
