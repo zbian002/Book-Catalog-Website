@@ -5,6 +5,7 @@ from app.auth import authentication as at
 from app.catalog import main
 from app.auth.models import User
 
+
 @at.route('/register', methods=['GET', 'POST'])
 def register_user():
     form = RegistrationForm()
