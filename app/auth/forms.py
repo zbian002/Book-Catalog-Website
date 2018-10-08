@@ -16,3 +16,10 @@ class RegistrationForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired(), Length(5), EqualTo('confirm', message='password must match')])
     confirm = PasswordField('Confirm', validators=[DataRequired()])
     submit = SubmitField('Register')
+
+
+class LoginForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    stay_loggedin = BooleanField('stay logged-in')
+    submit = SubmitField('LogIn')
