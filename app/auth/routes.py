@@ -35,3 +35,11 @@ def do_the_login():
         login_user(user, form.stay_loggedin.data)
         return redirect(url_for('main.display_books'))
     return render_template('login.html', form=form)
+
+
+@at.route('/logout')
+@login_required
+def log_out_user():
+    logout_user()
+    flash('Logged out Successfully')
+    return redirect(url_for('main.display_books'))
