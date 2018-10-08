@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
-# from flask_heroku import Heroku
+#from flask_heroku import Heroku
 
 db = SQLAlchemy()
 bootstrap = Bootstrap()
@@ -13,7 +13,7 @@ login_manager = LoginManager()
 login_manager.login_view = 'authentication.do_the_login'
 login_manager.session_protection = 'strong'
 bcrypt = Bcrypt()
-# heroku = Heroku()
+#heroku = Heroku()
 
 
 def create_app(config_type):  # dev, test, or prod
